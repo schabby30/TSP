@@ -4,8 +4,9 @@ import javax.swing.JFrame;
 
 public final class Simulation extends JFrame {
     
-    private final World world = new World();
-    private final Generation generation = new Generation();
+    public World world = new World(this);
+    public Generation generation = new Generation(world);
+    public boolean simulateRoute = true;
     
     public Simulation() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -18,8 +19,8 @@ public final class Simulation extends JFrame {
     
     public void run() {
         world.repaint();
-        System.out.println(generation.calculateFitness(world.cities, generation.generation.get(0)));
-    }
-    
-    
+//        for (int i= 0; i < 10; i++) {
+//            System.out.println("Fitness : " + generation.calculateFitness(world.cities, generation.generation.get(i)));
+//        }
+    }    
 }

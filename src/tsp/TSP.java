@@ -7,6 +7,8 @@ import javax.swing.UnsupportedLookAndFeelException;
 public class TSP {
 
     public static void main(String[] args) {
+        Simulation s = new Simulation();
+        
         EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
@@ -14,8 +16,7 @@ public class TSP {
                     UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
                 } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
                 }
-
-                Simulation s = new Simulation();
+                
                 s.run();
             }
         });        
